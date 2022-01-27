@@ -147,7 +147,7 @@ document.querySelector("#return").addEventListener("click", function(){
 
 function moveCarouselTo(position){
 
-    document.querySelector("#carrosel-img").querySelector("img").src = `../../images/galeria/283/img_`+ currentCarouselItem +`.jpg`;
+    document.querySelector("#carrosel-img").querySelector("img").src = `https://www.blogdojuares.com.br/images/galeria/283/img_`+ currentCarouselItem +`.jpg`;
 
 }
 
