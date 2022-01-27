@@ -1,0 +1,621 @@
+body{
+    padding: 0;
+    margin: auto;
+    overflow-x: hidden;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+.mouse_scroll {
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 100px;
+    margin-top: 125px;
+}
+
+
+.m_scroll_arrows
+{
+display: block;
+width: 5px;
+height: 5px;
+-ms-transform: rotate(45deg); /* IE 9 */
+-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+transform: rotate(45deg);
+
+border-right: 2px solid white;
+border-bottom: 2px solid white;
+margin: 0 0 3px 4px;
+
+width: 16px;
+height: 16px;
+}
+
+
+.unu
+{
+margin-top: 1px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+
+}
+
+.unu
+{
+-webkit-animation-delay: .1s;
+-moz-animation-delay: .1s;
+-webkit-animation-direction: alternate;
+
+animation-direction: alternate;
+animation-delay: alternate;
+}
+
+.doi
+{
+-webkit-animation-delay: .2s;
+-moz-animation-delay: .2s;
+-webkit-animation-direction: alternate;
+
+animation-delay: .2s;
+animation-direction: alternate;
+
+margin-top: -6px;
+}
+
+.trei
+{
+-webkit-animation-delay: .3s;
+-moz-animation-delay: .3s;
+-webkit-animation-direction: alternate;
+
+animation-delay: .3s;
+animation-direction: alternate;
+
+
+margin-top: -6px;
+}
+
+.mouse {
+height: 42px;
+width: 24px;
+border-radius: 14px;
+transform: none;
+border: 2px solid white;
+top: 170px;
+}
+
+.wheel {
+height: 5px;
+width: 2px;
+display: block;
+margin: 5px auto;
+background: white;
+position: relative;
+
+height: 4px;
+width: 4px;
+border: 2px solid #fff;
+-webkit-border-radius: 8px;
+        border-radius: 8px;
+}
+
+.wheel {
+-webkit-animation: mouse-wheel 0.6s linear infinite;
+-moz-animation: mouse-wheel 0.6s linear infinite;
+animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+}
+}
+@-moz-keyframes mouse-wheel {
+0% { top: 1px; }
+25% { top: 2px; }
+50% { top: 3px;}
+75% { top: 2px;}
+100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
+
+0% { top: 1px; }
+25% { top: 2px; }
+50% { top: 3px;}
+75% { top: 2px;}
+100% { top: 1px;}
+}
+@keyframes mouse-wheel {
+
+0% { top: 1px; }
+25% { top: 2px; }
+50% { top: 3px;}
+75% { top: 2px;}
+100% { top: 1px;}
+}
+
+@-webkit-keyframes mouse-scroll {
+
+0%   { opacity: 0;}
+50%  { opacity: .5;}
+100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+0%   { opacity: 0; }
+50%  { opacity: .5; }
+100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+0%   { opacity: 0; }
+50%  { opacity: .5; }
+100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+0%   { opacity: 0; }
+50%  { opacity: .5; }
+100% { opacity: 1; }
+}
+
+
+.unpading{
+    padding: 0;
+}
+
+.disclaimer{
+    color: red; 
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2rem);
+    width: 100%;
+    height: 100%;
+}
+
+.inline-photo-frame{
+    border: 1em solid #fff;
+    border-bottom: 4em solid #fff;
+    border-radius: .25em;
+    box-shadow: 1em 1em 2em .25em rgba(0,0,0,.2);
+    margin: 2em auto;
+    opacity: 0;
+    transform: translateY(4em) rotateZ(-5deg);
+    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+                opacity .3s .25s ease-out;
+    max-width: 600px;
+    width: 90%;
+    will-change: transform, opacity; 
+}
+
+
+.inline-photo-frame.is-visible {
+    opacity: 1;
+    transform: rotateZ(-2deg);
+}
+
+.inline-photo {
+    margin: 2em auto;
+    opacity: 0;
+    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+                opacity .3s .25s ease-out;
+    max-width: 600px;
+    will-change: transform, opacity;
+}
+
+.inline-photo.is-visible {
+    opacity: 1;
+}
+.inline-text {
+    opacity: 0;
+    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+                opacity .3s .25s ease-out;
+    max-width: 600px;
+    width: 90%;
+    will-change: transform, opacity;
+}
+
+.inline-text.is-visible {
+    opacity: 1;
+}
+.main-photo {
+    transform: scale(.8);
+}
+
+.heading {
+    transform: translate(-50%, calc(-50% + 1em));
+}
+
+.is-visible .main-photo {
+    transform: none;
+}
+
+.is-visible .heading {
+    transform: translate(-50%, -50%);
+}
+
+.main-photo,
+.heading {
+    transition: transform 4s .25s cubic-bezier(0,1,.3,1),
+                filter 10s 2s ease-out;
+    will-change: transform;
+}
+    
+header{
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+
+header .bg-dark{
+    background-color: #0a1037!important;
+}
+
+li{
+    list-style-type: none;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+#home{
+    height: 90vh;
+}
+
+#home-main-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 84, 6, 0.53);
+}
+
+#logo{
+    width: 100%;
+    height: 100%;
+}
+
+.row{
+    width: 100vw;
+}
+
+#sobre-img{
+    margin-top: 2rem;
+}
+
+.row{
+    width: 99%;
+}
+
+
+
+#sobre h2{
+    font-size: 3rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+#sobre p{
+    font-size: 2rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#sugestao-btn{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 750px){
+
+    #sobre article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sobre h2{
+        text-align: center;
+    }
+
+    #sobre p{
+        text-align: center;
+    }
+
+    #sobre-texto-container{
+        text-align: -webkit-center;
+    }
+
+    #next{
+        background-color: black;
+    }
+    
+    #return{
+        background-color: black;
+    }
+}
+
+#galeria{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#galeria-texto-container{
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#galeria h2{
+    text-align: center;
+    font-size: 3rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+#galeria p{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#galeria-cover-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 0, 41, 0.39);
+}
+
+#galeria a{
+    text-decoration: none;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;   
+}
+
+#carrosel-img{
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;   
+    font-weight: bold;
+    color: red;
+}
+
+#musicas{
+    padding-top: 1rem;
+}
+
+#musicas h2{
+    text-align: center;
+    font-size: 3rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;   
+}
+
+#musicas p{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#musicas-playlist-container{
+    width: 100%;
+    height: 100%;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+#musicas-sugestao-container h3{
+    text-align: center;
+    font-size: 2rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;   
+}
+
+#musicas-sugestao-container p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#sugestao{
+    padding-bottom: 5rem;
+}
+
+#sugestao button{
+    margin-top: 2rem;
+    border-color: #13FF39;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0);
+    color: #13FF39;
+}
+
+#sugestao button:hover{
+    background-color: #13FF39;
+    color: #010029;
+    border-color: #13FF39;
+}
+
+#ingressos{
+    margin-bottom: 4rem;
+}
+
+#ingressos-texto-container{
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#ingressos h2{
+    text-align: center;
+    font-size: 3rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;   
+}
+
+#ingressos p{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#ingressos-cover-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 0, 41, 0.377);
+}
+
+#linha-de-apoio{
+    color: white;
+}
+
+#price{
+    font-weight: bold;
+    color: #13FF39;
+}
+
+#ingressos-mapa-container{
+    padding-bottom: 1rem;
+}
+
+#ingressos #endereço{
+    color: white;
+}
+
+.fa-whatsapp{
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.fa-at{
+    margin-right: 0.5rem;
+}
+
+#ingressos-btns-container button{
+    transition: 0.5s;
+    font-size: 1.3rem;
+}
+
+#ingressos-btns-container button:hover{
+    opacity: 50%;
+    transition: 0.5s;
+}
+
+#ingressos-btns-container{
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+strong{
+    color: #13FF39;
+}
+
+#local{
+    padding-bottom: 4rem;
+}
+
+#local h2{
+    text-align: center;
+    font-size: 3rem;
+    color: #13FF39;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;   
+    padding-bottom: 2rem;
+}
+
+#local p{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.disclaimer h2{
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;   
+    padding-bottom: 2rem;
+}
+
+.disclaimer p{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#map {
+    height: 80vh; 
+    width: 60vw;
+    z-index: 1;
+}
+
+#ingressos-mapa {
+    height: 80vh; 
+    width: 60vw;
+    z-index: 1;
+}
+
+#disclaimer{
+    background-color: black;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+footer{
+    color: white;
+    text-decoration: none;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover{
+    color: white;
+    opacity: 50%;
+}
+
+#footer-description{
+    width: 80%;
+}

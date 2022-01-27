@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma balada retrô que irá tocar as grandes paradas de sucesso nacionais e internacionais dos anos 70 e 80, tocando alguma música também que marcou os anos 60 e 90. Você será transportado de volta aos velhos tempos e irá reviver os anos dourados.">
+    <meta property="og:title" content="Vem aí a festa do ano, BJ Night Fever a balada retrô">
+    <meta property="og:description" content="Uma balada retrô que irá tocar as grandes paradas de sucesso nacionais e internacionais dos anos 60 aos 90!">
+    <meta property="og:image" content="img/banner.png">
+    <title>BJ Night Fever | A balada retrô</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+</head>
+<body style="background: #010029;">
+    <header class="center">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">A Balada Retrô</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Última Edição</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#musicas">O que vai tocar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ingressos">Ingressos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#local">Data e Local</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <section id="home"  style="background: url('img/home-bg.jpg')100%; background-size: cover;" class="parallax">
+            <div id="home-main-container">
+                <div id="logo" class="center">
+                    <img src="img/logo.png" alt="BJ Night Fever" class="img-fluid inline-photo show-on-scroll" loading=lazy>
+                </div>
+            </div>
+            <div class="mouse_scroll">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="m_scroll_arrows unu"></span>
+                    <span class="m_scroll_arrows doi"></span>
+                    <span class="m_scroll_arrows trei"></span>
+                </div>
+            </div>
+        </section>
+        <section id="sobre" class="parallax">
+            <div id="sobre-main-container">
+                <article class="card"  style="background: #010029;">
+                    <div class="row no-gutters">
+                        <figure class="col-auto">
+                            <img src="img/party-girls.png" alt="Garotas dançando em uma festa" class="img-fluid inline-photo show-on-scroll" id="sobre-img" loading=lazy>
+                        </figure>
+                        <div id="sobre-texto-container" class="col center">
+                            <div class="card-block px-2">
+                                <h2 class="card-title reading inline-text show-on-scroll">A Balada Retrô</h2>
+                                <p class="card-text reading inline-text show-on-scroll">Uma balada retrô que irá tocar as grandes paradas de sucesso nacionais e internacionais dos anos 70 e 80, tocando alguma música também que marcou os anos 60 e 90. Você será transportado de volta aos velhos tempos e irá reviver os anos dourados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="galeria" style="background-image: url('img/galeria-bg.jpg'); background-size: cover;">
+            <div id="galeria-main-container" class="blur parallax">
+                <div id="galeria-cover-container"> 
+                    <div id="galeria-texto-container">
+                        <h2>Última edição</h2>
+                        <p>Veja o que rolou na última edição</p>                        
+                    </div>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner scrolling-wrapper">
+                            <div class="carousel-item active" id="carrosel-img">
+                                <img src="https://blogdojuares.com.br/images/galeria/283/img_1.jpg" class="inline-photo-frame show-on-scroll" alt="Imagem indisponivel" loading=lazy>
+                            </div>                            
+                        </div>
+                        <button class="carousel-control-prev" id="return" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" id="next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <h2 style="opacity: 0; pointer-events: none;">A</h2>
+                </div>
+            </div>
+        </section>
+        <section id="musicas">
+            <div id="musicas-main-container">
+                <div id="musicas-texto-container">
+                    <h2>O que vai tocar?</h2>
+                    <p>Vai tocar de tudo, confere aí!</p>
+                </div>
+                <div id="musicas-playlist-container" class="center">
+                    <iframe src="https://open.spotify.com/embed/playlist/6335FpUH6mkmNjS1TuxH5I?utm_source=generator&theme=0" width="80%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" class="inline-photo show-on-scroll"></iframe>
+                </div>
+            </div>
+        </section>
+        <section id="sugestao" class="center">
+            <div id="musicas-sugestao-container">
+                <h3>Não encontrou aquela música dos velhos tempos?</h3>
+                <p>Sugira uma música</p>
+                <div id="sugestao-btn-container" class=" inline-photo show-on-scroll center">
+                   <button id="sugestao-btn">Clique aqui!</button> 
+                </div>
+            </div>
+        </section>
+        <section id="ingressos" style="background-image: url('img/img_45.jpg');  background-size: cover;">
+            <div id="ingressos-cover-container" class="blur">
+                <div id="ingressos-main-container">
+                    <div id="ingressos-texto-container">
+                        <h2>Ingressos</h2>
+                        <p id="linha-de-apoio">Compre seus ingressos em nossos pontos de venda físicos ou pelo Whatsapp</p>
+                        <p id="price">1º Lote por apenas R$25,00 e direito a mesa</p>
+                    </div>
+                    
+                    <div id="ingressos-mapa-container" class="center inline-photo show-on-scroll">
+                        <div id="ingressos-mapa"></div>
+                    </div>
+                    <p id="endereço">Rua Bento Gonçalves, 951, no centro de Camaquã (RS) – Redação do Blog do Juares</p>
+                    <div id="ingressos-btns-container" class="center inline-photo show-on-scroll">
+                        <a href="https://api.whatsapp.com/send?phone=5551985242627&text=Quero%20comprar%20um%20ingresso%20para%20a%20BJ%20Night%20Fever" target="_blank"><button class="btn btn-primary" style="background-color: #1fa751; border: none;"><i class="fab fa-whatsapp"></i>Comprar</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="local" class="center">
+            <div id="local-main-container">
+                <div id="local-texto-container">
+                    <h2>Data e Local</h2>
+                    <p>11/12/2021 - 23:30 <br><br> R. General Zeca Netto, nº 02, Jardim do Forte (Prainha), Camaquã - RS</p>
+                </div>
+                <div id="local-mapa-container">
+                    <div id="map" class="container-fluid inline-photo show-on-scroll"></div>
+                </div>
+            </div>
+
+        </section>            
+        <section id="disclaimer" class="center">
+            <div id="disclaimer-main-container" class="disclaimer center">
+                <div>
+                    <h2 class="center">Atenção:</h2>
+                    <p>Seguiremos os protocolos sanitários, incluindo:</p>
+                    <ul class="unpading" align="center">
+                        <li>Apresentação da carteira vacinal;</li>
+                        <li>Disponibilidade de mesas para os participantes;</li>
+                        <li>Uso de máscara conforme os protocolos sanitários.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="pt-5 pb-5 footer bg-dark">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-xs-12 about-company">
+                <h4>A Balada Retrô</h4>
+                <p class="pr-5 text-white-50" id="footer-description">Uma balada retrô que irá tocar as grandes paradas de sucesso nacionais e internacionais dos anos 70 e 80, tocando alguma música também que marcou os anos 60 e 90. Você será transportado de volta aos velhos tempos e irá reviver os anos dourados.</p>
+                <figure>
+                    <a href="https://www.blogdojuares.com.br" target="_blank">
+                        <img src="img/logo-bj.png" alt="Blog do Juares" class="img-fluid" width="30%" loading=lazy>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="https://bjradioweb.vipfm.net/" target="_blank">
+                        <img src="img/logo-bjradioweb.png" alt="BJ Rádio Web, uma nova maneira de fazer rádio" class="img-fluid" width="31%" loading=lazy>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="https://fabriciobarbosaviegas.github.io" target="_blank">
+                        <img src="img/logo-fabricio.png" alt="Desenvolvido por Fabrício Barbosa Viegas" class="img-fluid" width="10%" loading=lazy>
+                    </a>
+                </figure>
+              </div>
+              <div class="col-lg-3 col-xs-12 links">
+                <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                  <ul class="m-0 p-0">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">A Balada Retrô</a></li>
+                    <li><a href="#galeria">Última Edição</a></li>
+                    <li><a href="#musicas">O que vai tocar</a></li>
+                    <li><a href="#local">Data e Local</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-4 col-xs-12 location">
+                <h4 class="mt-lg-0 mt-sm-4">Local</h4>
+                <p>R. General Zeca Netto, nº 02, Jardim do Forte (Prainha), Camaquã - RS</p>
+                <p class="mb-0"><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send?phone=5551985242627" target="_blank">51 98617-5118</a></p>
+                <p><i class="fa fa-at mr-3"></i><a href="mailto:blogdojuares@gmail.com">blogdojuares@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col copyright">
+                <p class=""><small class="text-white-50">Desenvolvido por <a href="https://fabriciobarbosaviegas.github.io" target="_blank">Fabrício Barbosa Viegas</a> ©Blog do Juares 2021. Todos os direitos reservados.</small></p>
+              </div>
+            </div>
+          </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/swiped-events.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
